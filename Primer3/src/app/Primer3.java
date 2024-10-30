@@ -40,6 +40,11 @@ public class Primer3 extends javax.swing.JFrame {
         jCheckBox1.setText("Отбележете");
 
         jButton2.setText("Задача 2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -120,6 +125,46 @@ public class Primer3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Грешни данни","Съобщение",1);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String firstWord = jTextField1.getText();
+        String secondWord = jTextField2.getText();
+        
+        String shorterWord, longerWord;
+        if(firstWord.length() > secondWord.length())
+        {
+            longerWord = firstWord;
+            shorterWord = secondWord;
+            
+            if(longerWord.contains(shorterWord))
+            {
+                JOptionPane.showMessageDialog(this,shorterWord +  " се съдържа в " + longerWord);
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(this,shorterWord +  " не се съдържа в " + longerWord);
+            }
+        } 
+        else if(firstWord.length() < secondWord.length())
+        {
+            longerWord = secondWord;
+            shorterWord = firstWord;
+            
+            if(longerWord.contains(shorterWord))
+            {
+                JOptionPane.showMessageDialog(this,shorterWord + " се съдържа в " + longerWord);
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(this,shorterWord +  " не се съдържа в " + longerWord);
+            }
+        }
+        
+        else if(firstWord.length() == secondWord.length())
+        {
+            JOptionPane.showMessageDialog(this,"Думите са с еднаква дължина");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
