@@ -31,8 +31,11 @@ public class Primer2 extends javax.swing.JFrame {
         });
 
         jButton2.setText("Задача 2");
-
-        jLabel1.setText("jLabel1");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,6 +103,11 @@ public class Primer2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Грешни данни","Съобщение",0);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String word = JOptionPane.showInputDialog(this, "Въведете името си","Име",1);
+        jLabel1.setText(word + "124217");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
         
