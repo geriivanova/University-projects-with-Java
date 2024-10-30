@@ -68,7 +68,25 @@ public class Primer2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        double a,b;
+        try {
+            a = Double.parseDouble(jTextField1.getText());
+            b = Double.parseDouble(jTextField2.getText());
+            
+            if(b >= 0.00000001 && b <= -0.00000001)
+            {
+                if(a%b == 0)
+                {
+                    JOptionPane.showMessageDialog(this,"Делят се без остатък","Съобщение",1);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this,"Делят се с остатък","Съобщение",1);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"Грешни данни","Съобщение",0);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
