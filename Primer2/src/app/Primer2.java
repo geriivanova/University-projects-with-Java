@@ -41,6 +41,11 @@ public class Primer2 extends javax.swing.JFrame {
         });
 
         jButton3.setText("Задача 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -57,9 +62,9 @@ public class Primer2 extends javax.swing.JFrame {
                             .addComponent(jTextField1))
                         .addGap(86, 86, 86)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
@@ -127,6 +132,21 @@ public class Primer2 extends javax.swing.JFrame {
         String word = JOptionPane.showInputDialog(this, "Въведете името си","Име",1);
         jLabel1.setText(word + "124217");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
+        int itemCount =  jComboBox1.getItemCount();
+        if(itemCount == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Кутията е празна","Съобщение",0);
+        }
+        else
+        {
+            String selectedItem = jComboBox1.getSelectedItem().toString();
+            jLabel2.setText(selectedItem);
+        }
+          
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
         
