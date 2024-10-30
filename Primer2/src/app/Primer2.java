@@ -73,7 +73,7 @@ public class Primer2 extends javax.swing.JFrame {
             a = Double.parseDouble(jTextField1.getText());
             b = Double.parseDouble(jTextField2.getText());
             
-            if(b > 0.00000001 && b < -0.00000001)
+            if(b > 0.00000001 || b < -0.00000001)
             {
                 if(a%b == 0)
                 {
