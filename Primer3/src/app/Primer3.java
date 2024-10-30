@@ -5,9 +5,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Primer3 extends javax.swing.JFrame {
-
+    DefaultListModel<String> model;
+    
     public Primer3() {
         initComponents();
+        model = new DefaultListModel<>();
+        jList1.setModel(model);
     }
 
     @SuppressWarnings("unchecked")
@@ -52,6 +55,11 @@ public class Primer3 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         jButton3.setText("Задача 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -184,6 +192,12 @@ public class Primer3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Думите са с еднаква дължина");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       String word = jTextField1.getText();
+       
+       model.addElement(word);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
