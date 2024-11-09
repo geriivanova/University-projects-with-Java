@@ -35,6 +35,11 @@ public class Homework1 extends javax.swing.JFrame {
                 "Преподавател", "Предмет"
             }
         ));
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTable1KeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -159,6 +164,15 @@ public class Homework1 extends javax.swing.JFrame {
                 (this, "Няма предмет " + search + " в базата", "Съобщение", 1);
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jTable1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_C)
+        {
+            JOptionPane.showMessageDialog(this, "Броят на редовете е " + table.getRowCount(), "Съобщение", 1);
+        }
+        
+        
+    }//GEN-LAST:event_jTable1KeyPressed
 
     public static void main(String args[]) {
         
