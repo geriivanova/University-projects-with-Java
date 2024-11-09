@@ -106,14 +106,26 @@ public class Homework1 extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         String search = JOptionPane.showInputDialog(this, "Въведете име на преподавател");
+        String answer = search + " преподава по ";
+        boolean flag = false;
         for (int i = 0; i < table.getRowCount(); i++) 
         {
             if(search.equals(table.getValueAt(i, 0)))
             {
-                JOptionPane.showMessageDialog
-                (this, search + " преподава по " + (table.getValueAt(i, 1)));
+                answer += table.getValueAt(i, 1) + ",";
+                flag = true;
             }
         }
+        if(flag == true)
+        {
+            JOptionPane.showMessageDialog(this, answer , "Съобщение", 1);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog
+                (this, "Няма данни за преподавател " + search, "Съобщение", 1);
+        }
+         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     public static void main(String args[]) {
