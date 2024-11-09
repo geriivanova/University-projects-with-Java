@@ -138,7 +138,26 @@ public class Homework1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-       
+        String search = JOptionPane.showInputDialog(this, "Въведете предмет");
+        String answer = "Предмет " + search + " се води от ";
+        boolean flag = false;
+        for (int i = 0; i < table.getRowCount(); i++) 
+        {
+            if(search.equals(table.getValueAt(i, 1)))
+            {
+                answer += table.getValueAt(i, 0) + ",";
+                flag = true;
+            }
+        }
+        if(flag == true)
+        {
+            JOptionPane.showMessageDialog(this, answer , "Съобщение", 1);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog
+                (this, "Няма предмет " + search + " в базата", "Съобщение", 1);
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     public static void main(String args[]) {
